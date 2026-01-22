@@ -68,12 +68,13 @@
       <li><a href="https://www.linkedin.com/in/simran-bhowmick-a586552b6/">Linkedin</a></li>
       <li>
         <button class="copy-email-btn" on:click={copyEmail}>
-          Copy Email
+          copy email
         </button>
+
         {#if copied}
           <span class="status-msg">copied!</span>
         {/if}
-      </li>
+    </li>
     </ul>
   </div>
 </section>

@@ -6,19 +6,22 @@ const config = {
   preprocess: vitePreprocess(),
 
   kit: {
+    // adapter-static config
     adapter: adapter({
       pages: 'build',
       assets: 'build',
-      fallback: 'index.html' // 👈 THIS FIXES THE ERROR
+      fallback: '404.html', // GitHub Pages specifically looks for 404.html for SPAs
+      precompress: false,
+      strict: true
     }),
 
     paths: {
-      base: process.env.NODE_ENV === 'production'
-        ? '/Portfolio_Simran_Bhowmick'
+      // This must match your repo name exactly: Simran_Bhowmick-Portfolio
+      base: process.env.NODE_ENV === 'production' 
+        ? '/Simran_Bhowmick_Portfolio' 
         : '',
     }
   }
 };
 
 export default config;
-
